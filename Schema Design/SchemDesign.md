@@ -2,6 +2,14 @@
 
 ![screenshot](schema_design_updated.jpeg)
 
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
 **USER_TABLE**
 <br/>
 This table has all the details of registered user to this system. The primary key of this table is User_Id which uniquely identifies a user against the plethora of users hooked to system.
