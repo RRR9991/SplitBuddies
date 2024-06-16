@@ -1,13 +1,27 @@
 ### SPLIT BUDDIES DATABASE SCHEMA DESIGN
 
-![screenshot](schema_design_updated.jpeg)
-
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+erDiagram
+    USER_TABLE }|--|{ GROUP_TABLE : contains
+    USER_TABLE {
+        string User_Id(Primary)
+        string User_Name
+        string User_Email
+        string User_Password
+    }
+    GROUP_TABLE ||--|{ TRANSACTION_TABLE : contains
+    TRANSACTION_TABLE {
+        string Transaction_Id(Primary)
+        string Transaction_Name
+        string Lender_User_Name
+        string Borrower_User_Name
+        int Money_Spent
+        bool IsSettled
+    }
+    GROUP_TABLE {
+        string Group_Id(Primary)
+        string Group_Name
+    }
 ```
 
 **USER_TABLE**
